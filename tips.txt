@@ -1,0 +1,24 @@
+//一些相关命令
+
+上传结果(注意:不要上传压缩的结果文件)，示例teamX:
+热身赛：
+aws s3  cp  /home/isicdm/(结果)  s3://isicdmresult/teamX/warmup_match  --recursive
+
+排位赛：
+aws s3  cp  /home/isicdm/(结果)  s3://isicdmresult/teamX/qualifying   --recursive
+
+决赛
+aws s3  cp  /home/isicdm/(结果)  s3://isicdmresult/teamX/final  --recursive
+
+
+/home/isicdm/(结果)  #替换为结果所在文件路径
+
+s3://isicdmresult/teamX/  #teamX替换为自己的team
+
+
+
+// 列出  my-bucket的所有内容
+$ aws s3 ls s3://my-bucket
+
+// 列出my-bucket中MyFolder的所有内容
+$ aws s3 ls s3://my-bucket/MyFolder

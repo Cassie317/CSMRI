@@ -1,0 +1,44 @@
+Step 1 : 安装 awscli软件，软件的下载地址如下：
+windows（64位）：
+https://awscli.amazonaws.com/AWSCLIV2.msi
+
+linux（64 位 Linux ）：
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+也可以自己去aws官网下载：https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/install-cliv2.html
+
+Step2 : 配置
+执行 aws configure 命令
+ 
+输入自己组的Key ID  和 Access Key（见文件）
+
+
+step3：
+
+上传结果(注意:不要上传压缩的结果文件)，示例teamX:
+热身赛：
+aws s3  cp  /home/isicdm/(结果)  s3://isicdmresult/teamX/warmup_match  --recursive
+
+排位赛：
+aws s3  cp  /home/isicdm/(结果)  s3://isicdmresult/teamX/qualifying   --recursive
+
+决赛
+aws s3  cp  /home/isicdm/(结果)  s3://isicdmresult/teamX/final  --recursive
+
+
+/home/isicdm/(结果)  #替换为结果所在文件路径
+
+s3://isicdmresult/teamX/  #teamX替换为自己的team
+
+
+注意 –recursive 表示递归上传
+
+提交数据的说明：
+
+提交数据的文件命名保持与测试数据一致，文件格式说明如下：
+项目1：.mhd
+项目2：.npy
+项目3：.jpg
+有问题可在微信群交流，若仍未进微信群，请缴费后联系主办方。
